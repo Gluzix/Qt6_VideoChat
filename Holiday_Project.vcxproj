@@ -69,6 +69,9 @@
       <AdditionalLibraryDirectories>%OPENCV_DIR%/x64/vc15/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opencv_world453d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>XCOPY %OPENCV_DIR%\x64\vc15\bin\opencv_world453d.dll $(SolutionDir)x64\Debug </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
