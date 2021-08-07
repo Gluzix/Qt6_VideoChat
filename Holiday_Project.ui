@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Holiday_ProjectClass</class>
+ <widget class="QMainWindow" name="Holiday_ProjectClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>773</width>
+    <height>515</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Holiday_Project</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+background-color:rgb(59,59,59);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0" colspan="2">
+     <widget class="CustomGraphicsView" name="GraphicsView">
+      <property name="styleSheet">
+       <string notr="true">QGraphicsView{
+border:none;
+background-color:rgb(39,39,39);
+}</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CustomGraphicsView</class>
+   <extends>QGraphicsView</extends>
+   <header>CustomGraphicsView.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="Holiday_Project.qrc"/>
+ </resources>
+ <connections/>
+</ui>
