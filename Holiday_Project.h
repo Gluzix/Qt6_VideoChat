@@ -9,6 +9,7 @@
 #include "CustomGraphicsView.h"
 #include "ImageGatherer.h"
 #include "ControlPanel.h"
+#include "CameraPropertiesHolder.h"
 #include "ui_Holiday_Project.h"
 
 class Holiday_Project : public QMainWindow
@@ -17,6 +18,8 @@ class Holiday_Project : public QMainWindow
 public:
     Holiday_Project(QWidget *parent = Q_NULLPTR);
     ~Holiday_Project();
+
+    void PrepareCapturer();
 
 
 private slots:
@@ -32,5 +35,12 @@ private:
     QGraphicsScene *m_Scene;
     QGraphicsPixmapItem *m_PixmapItem;
     ImageGatherer *m_Gatherer;
+    CameraPropertiesHolder* m_CameraPropertiesHolder;
     QThread m_Thread;
+
+    cv::VideoCapture m_Cap;
+    QMutex m_Mutex;
+
+    int m_DeviceId;
+    int m_ApiId;
 };

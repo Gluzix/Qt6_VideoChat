@@ -11,10 +11,9 @@ class ImageGatherer : public QObject
 {
 	Q_OBJECT
 public:
-	ImageGatherer(QObject* parent = Q_NULLPTR);
+	ImageGatherer(cv::VideoCapture* cap, QMutex *mutex, QObject* parent = Q_NULLPTR);
 	~ImageGatherer();
 
-	bool PrepareCapturer();
 	void ReleaseCapturer();
 	void StartAcquisition();
 	void StopAcquisition();
@@ -27,11 +26,9 @@ signals:
 	void PassImage(QImage image);
 
 private:
-	QMutex m_Mutex;
+	QMutex *m_Mutex;
 	cv::Mat m_Frame;
-	cv::VideoCapture m_Capture;
-	int m_DeviceId;
-	int m_ApiId;
+	cv::VideoCapture *m_Capture;
 	bool m_bIsAcquiring;
 	bool m_bIsThreadActive;
 };

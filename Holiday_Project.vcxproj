@@ -70,7 +70,7 @@
       <AdditionalDependencies>opencv_world453d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>XCOPY %OPENCV_DIR%\x64\vc15\bin\opencv_world453d.dll $(SolutionDir)x64\Debug </Command>
+      <Command>XCOPY %OPENCV_DIR%\x64\vc15\bin\opencv_world453d.dll $(SolutionDir)x64\Debug /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -111,9 +111,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <QtRcc Include="Holiday_Project.qrc" />
+    <QtUic Include="CameraPropertiesHolder.ui" />
     <QtUic Include="ControlPanel.ui" />
     <QtUic Include="Holiday_Project.ui" />
     <QtMoc Include="Holiday_Project.h" />
+    <ClCompile Include="CameraPropertiesHolder.cpp" />
     <ClCompile Include="ControlPanel.cpp" />
     <ClCompile Include="CustomGraphicsView.cpp" />
     <ClCompile Include="Holiday_Project.cpp" />
@@ -128,6 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ControlPanel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="CameraPropertiesHolder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

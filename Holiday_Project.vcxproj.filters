@@ -49,6 +49,9 @@
     <ClCompile Include="ControlPanel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CameraPropertiesHolder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="CustomGraphicsView.h">
@@ -60,9 +63,15 @@
     <QtMoc Include="ControlPanel.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="CameraPropertiesHolder.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="ControlPanel.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="CameraPropertiesHolder.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
