@@ -12,16 +12,20 @@ CameraPropertiesHolder::~CameraPropertiesHolder()
 {
 }
 
-void CameraPropertiesHolder::AddPropertyWidget()
+void CameraPropertiesHolder::ReadCameraProperties()
 {
-	QMutexLocker locker(m_Mutex);
-	for (int i = 0; i < 53; i++)
-	{
-		double value = m_Cap->get(i);
-		if (value != 0)
-		{
-			Property prop(i);
-			qInfo() << QString::fromStdString(prop.GetPropertyName());
-		}
-	}
+	CameraPropertiesHolderWorker* worker = new CameraPropertiesHolderWorker(m_Cap, m_Mutex);
+	QThread *thread = new QThread();
+
+	connect(worker, SIGNAL(SendPropertyName(QString)), this, SLOT(ddPropertyWidget(QString)));
+	connect(thread, SIGNAL(started()), worker, SLOT(Process()));
+	connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+	connect(thread, SIGNAL(finished()), worker, SLOT(deleteLater()));
+	worker->moveToThread(thread);
+	thread->start();
+}
+
+void CameraPropertiesHolder::AddPropertyWidget(QString name)
+{
+	qInfo() << "PropertyName: " << name;
 }

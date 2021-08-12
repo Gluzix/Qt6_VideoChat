@@ -52,6 +52,9 @@
     <ClCompile Include="CameraPropertiesHolder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CameraPropertiesHolderWorker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="CustomGraphicsView.h">
@@ -64,6 +67,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="CameraPropertiesHolder.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="CameraPropertiesHolderWorker.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
