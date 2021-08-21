@@ -9,23 +9,6 @@
 #include "CameraPropertiesHolderWorker.h"
 #include "ui_CameraPropertiesHolder.h"
 
-class PropertyWidget : public QWidget
-{
-public:
-	PropertyWidget(QWidget *parent) : QWidget(parent)
-	{
-
-	}
-
-	~PropertyWidget()
-	{
-
-	}
-
-private:
-};
-
-
 class CameraPropertiesHolder : public QWidget
 {
 	Q_OBJECT

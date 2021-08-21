@@ -110,6 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="PropertyWidget.cpp" />
     <QtRcc Include="Holiday_Project.qrc" />
     <QtUic Include="CameraPropertiesHolder.ui" />
     <QtUic Include="ControlPanel.ui" />
@@ -122,6 +123,7 @@
     <ClCompile Include="Holiday_Project.cpp" />
     <ClCompile Include="ImageGatherer.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="PropertyWidget.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="CustomGraphicsView.h" />
@@ -137,6 +139,13 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="CameraPropertiesHolderWorker.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PropertyWidget.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Holiday_Project.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

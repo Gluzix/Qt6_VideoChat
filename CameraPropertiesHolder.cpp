@@ -1,4 +1,5 @@
 #include "CameraPropertiesHolder.h"
+#include "PropertyWidget.h"
 
 CameraPropertiesHolder::CameraPropertiesHolder(cv::VideoCapture* cap, QMutex* mutex, QWidget* parent)
 	: QWidget(parent)
@@ -27,5 +28,6 @@ void CameraPropertiesHolder::ReadCameraProperties()
 
 void CameraPropertiesHolder::AddPropertyWidget(QString name)
 {
-	qInfo() << "PropertyName: " << name;
+	PropertyWidget* widget = new PropertyWidget(nullptr, name);
+	ui.scrollAreaLayout->addWidget(widget);
 }

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PropertyWidget</class>
+ <widget class="QWidget" name="PropertyWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>22</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>300</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>PropertyWidget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+background:transparent;
+}
+
+QLabel{
+color:rgb(49,49,49);
+}
+
+QLineEdit{
+background-color:rgb(70,70,70);
+border:1px solid rgb(95,94,93);
+border-radius:6px;
+}
+
+QSlider{
+
+}
+
+QSlider::groove:horizontal { 
+	background-color: rgb(99,99,99);
+	border: 1px solid rgb(49,49,49); 
+	height: 3px; 
+	border-radius:2px;
+}
+
+QSlider::handle:horizontal {
+    background: rgb(149,149,149);
+    border: 1px solid rgb(69,69,69);
+    width: 12px;
+	margin: -6 0;
+    border-radius: 4px;
+}
+
+QSlider::sub-page:horizontal {
+    background: rgb(68,54,255);
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" columnstretch="0,1,0,0">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="3">
+    <widget class="QLineEdit" name="m_LineEdit">
+     <property name="maximumSize">
+      <size>
+       <width>100</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="m_LabelName">
+     <property name="text">
+      <string>Test name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QSlider" name="m_HorizontalSlider">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
